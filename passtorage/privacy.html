@@ -4,38 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Passtorage</title>
-    <style>/* CSSはterms.htmlと同様 */</style>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { margin-top: 30px; color: #444; border-left: 4px solid #444; padding-left: 10px; }
+        .lang-switcher { text-align: right; margin-bottom: 20px; }
+        .contact-box { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-top: 20px; border: 1px solid #eee; }
+        .date-info { text-align: right; font-size: 0.8em; color: #777; margin-bottom: 10px; }
+        .master-notice { background: #eef; padding: 10px; border-radius: 5px; font-size: 0.9em; margin-bottom: 20px; border: 1px solid #ccd; }
+        a { color: #007bff; text-decoration: none; }
+        ul { padding-left: 20px; }
+        select { padding: 5px; font-size: 14px; }
+    </style>
 </head>
 <body>
     <div class="lang-switcher">
         <select id="langSelect" onchange="switchLang(this.value)">
             <option value="en">English (Master)</option>
             <option value="ja">日本語</option>
-            </select>
+            <option value="bn">বাংলা</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="hi">हिन्दी</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="it">Italiano</option>
+            <option value="ko">한국어</option>
+            <option value="pt">Português</option>
+            <option value="th">ไทย</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="zh">中文 (简体)</option>
+        </select>
     </div>
+
     <div id="content"></div>
+
+    <div class="contact-box">
+        <h2 id="contact-title">Contact Us</h2>
+        <p id="contact-desc">If you have any questions, please contact us:</p>
+        <ul>
+            <li>Email: <a href="mailto:myapp.show0604@gmail.com">myapp.show0604@gmail.com</a></li>
+            <li>X (Twitter): <a href="https://x.com/myapp_show0604" target="_blank">@myapp_show0604</a></li>
+        </ul>
+    </div>
+
+    <hr>
+    <p><a href="index.html">Back to Home</a></p>
+
     <script>
         const translations = {
             en: {
                 title: "Privacy Policy",
                 update: "Last Updated: February 13, 2026",
+                intro: "<strong>Governing Language:</strong> The English version of this Privacy Policy shall be the master version and shall prevail in the event of any conflict with translated versions.<br><br>Passtorage (the \"App\") prioritizes your privacy. We strictly adhere to a local-first policy.",
                 sections: [
-                    { h: "1. Data Storage", p: "Data is stored locally. We have no access to it." },
-                    { h: "2. Third-Party", p: "We use Firebase and AdMob for stability and ads." },
-                    { h: "3. Changes", p: "This policy may change without notice. Continued use of Passtorage after changes implies acceptance." }
-                ]
+                    { h: "1. Information We Do Not Collect", p: "We do <strong>NOT</strong> collect, store, or transmit any of the following personal information to our servers:<br>- Your name, email address, or phone number.<br>- Your Master Password.<br>- Your stored passwords or login credentials.<br><br>All sensitive data is encrypted and stored strictly within your device's local storage." },
+                    { h: "2. Third-Party Services & Data Collection", p: "While we do not collect personal data directly, the App uses third-party services that may collect information used to identify your device.<br><br><strong>Google AdMob & Firebase Analytics</strong><br>These services may collect:<br>- Device identifiers (e.g., Android Advertising ID, IDFA).<br>- Usage data (e.g., crash logs, app interactions).<br>- Approximate location data (for ad serving).<br><br>This data is used solely to improve App stability and to display advertisements. It is not linked to your stored passwords." },
+                    { h: "3. Data Security", p: "Your data is protected using industry-standard encryption on your device. Since we do not possess your Master Password, we cannot access or decrypt your data under any circumstances." },
+                    { h: "4. Changes to This Privacy Policy", p: "We may update our Privacy Policy from time to time without prior notice. The changes are effective immediately upon posting on this page. Your continued use of the App defines your acceptance of the updated policy." }
+                ],
+                contactT: "Contact Us", contactD: "If you have any questions about this Privacy Policy, please contact us:"
             },
             ja: {
                 title: "プライバシーポリシー",
                 update: "最終更新日: 2026年2月13日",
+                intro: "<strong>言語規定：</strong> 本プライバシーポリシーは英語版を正本とし、翻訳版との間に矛盾がある場合は英語版が優先されます。<br><br>Passtorage（以下「本アプリ」）は、利用者のプライバシーを最優先に考え、ローカルファーストの方針を厳守します。",
                 sections: [
-                    { h: "1. データの保存", p: "データは端末内にのみ保存され、開発者がアクセスすることはありません。" },
-                    { h: "2. 第三者サービス", p: "安定性向上と広告表示のため、FirebaseおよびAdMobを利用しています。" },
-                    { h: "3. ポリシーの変更", p: "本ポリシーは予告なく変更される場合があります。変更後の継続利用をもって、最新のポリシーに同意したものとみなされます。" }
-                ]
-            }
+                    { h: "1. 収集しない情報", p: "当方は、以下の個人情報を収集、保存、またはサーバーへ送信することは<strong>一切ありません</strong>：<br>- 氏名、メールアドレス、電話番号。<br>- マスターパスワード。<br>- 保存されたパスワードやログイン情報。<br><br>すべての機密データは暗号化され、利用者のデバイス内のローカルストレージにのみ保存されます。" },
+                    { h: "2. 第三者サービスとデータ収集", p: "当方が直接個人データを収集することはありませんが、本アプリはデバイスを識別するために以下の第三者サービスを利用しています。<br><br><strong>Google AdMob および Firebase Analytics</strong><br>これらのサービスは以下を収集する場合があります：<br>- デバイス識別子（広告ID、IDFAなど）。<br>- 利用データ（クラッシュログ、操作履歴など）。<br>- おおよその位置情報（広告配信用）。<br><br>これらのデータは、アプリの安定性向上および広告表示の目的でのみ使用され、利用者が保存したパスワード情報と紐付けられることはありません。" },
+                    { h: "3. データのセキュリティ", p: "データは業界標準の暗号化技術を用いてデバイス内で保護されます。当方は利用者のマスターパスワードを保持していないため、いかなる状況下でも利用者のデータにアクセスしたり復号したりすることはできません。" },
+                    { h: "4. プライバシーポリシーの変更", p: "当方は、事前の通知なく本プライバシーポリシーを随時更新することがあります。変更は本ページに掲載された時点で直ちに効力を生じます。変更後の継続利用をもって、新しいポリシーに同意したものとみなされます。" }
+                ],
+                contactT: "お問い合わせ", contactD: "本ポリシーに関するご質問は、以下よりご連絡ください："
+            },
+            // Simplified translations for other languages (English prevails clause included)
+            bn: { title: "গোপনীয়তা নীতি (Privacy Policy)", update: "Last Updated: Feb 13, 2026", intro: "ইংরেজি সংস্করণটি মূল সংস্করণ। (English version prevails)", sections: [{ h: "1. No Data Collection", p: "We do not collect your personal data or passwords." }, { h: "2. Third Party", p: "We use AdMob and Firebase which may collect device IDs." }, { h: "3. Security", p: "Data is encrypted locally." }, { h: "4. Changes", p: "Policy may change without notice." }] },
+            de: { title: "Datenschutzerklärung (Privacy Policy)", update: "Zuletzt aktualisiert: 13. Feb. 2026", intro: "Die englische Version hat Vorrang.", sections: [{ h: "1. Keine Datenerfassung", p: "Wir sammeln keine persönlichen Daten oder Passwörter." }, { h: "2. Drittanbieter", p: "Wir nutzen AdMob und Firebase (Geräte-IDs)." }, { h: "3. Sicherheit", p: "Daten sind lokal verschlüsselt." }, { h: "4. Änderungen", p: "Änderungen vorbehalten." }] },
+            es: { title: "Política de Privacidad (Privacy Policy)", update: "Actualizado: 13 de feb. de 2026", intro: "La versión en inglés prevalece.", sections: [{ h: "1. Sin Recopilación", p: "No recopilamos datos personales ni contraseñas." }, { h: "2. Terceros", p: "Usamos AdMob y Firebase (IDs de dispositivo)." }, { h: "3. Seguridad", p: "Datos cifrados localmente." }, { h: "4. Cambios", p: "Cambios sin previo aviso." }] },
+            fr: { title: "Politique de Confidentialité (Privacy Policy)", update: "Mis à jour : 13 fév. 2026", intro: "La version anglaise prévaut.", sections: [{ h: "1. Pas de Collecte", p: "Nous ne collectons pas vos données personnelles." }, { h: "2. Tiers", p: "Nous utilisons AdMob et Firebase." }, { h: "3. Sécurité", p: "Chiffrement local." }, { h: "4. Modifications", p: "Peut changer sans préavis." }] },
+            hi: { title: "गोपनीयता नीति (Privacy Policy)", update: "Last Updated: Feb 13, 2026", intro: "अंग्रेजी संस्करण ही मान्य होगा।", sections: [{ h: "1. No Data Collection", p: "No personal data collected." }, { h: "2. Third Party", p: "Using AdMob and Firebase." }, { h: "3. Security", p: "Local encryption." }, { h: "4. Changes", p: "Effective immediately." }] },
+            id: { title: "Kebijakan Privasi (Privacy Policy)", update: "Diperbarui: 13 Feb 2026", intro: "Versi Inggris berlaku.", sections: [{ h: "1. Tidak Ada Pengumpulan", p: "Kami tidak mengumpulkan data pribadi." }, { h: "2. Pihak Ketiga", p: "Menggunakan AdMob & Firebase." }, { h: "3. Keamanan", p: "Enkripsi lokal." }, { h: "4. Perubahan", p: "Dapat berubah sewaktu-waktu." }] },
+            it: { title: "Privacy Policy", update: "Aggiornato: 13 feb 2026", intro: "La versione inglese prevale.", sections: [{ h: "1. Nessuna Raccolta", p: "Non raccogliamo dati personali." }, { h: "2. Terze Parti", p: "Uso di AdMob e Firebase." }, { h: "3. Sicurezza", p: "Crittografia locale." }, { h: "4. Modifiche", p: "Modifiche senza preavviso." }] },
+            ko: { title: "개인정보 처리방침 (Privacy Policy)", update: "최종 업데이트: 2026년 2월 13일", intro: "<strong>언어 규정:</strong> 영문판이 정본이며 우선합니다.", sections: [{ h: "1. 수집하지 않는 정보", p: "당사는 이름, 이메일, 비밀번호 등을 절대 수집하지 않습니다." }, { h: "2. 제3자 서비스", p: "AdMob 및 Firebase를 사용하며, 광고 ID 등이 수집될 수 있습니다." }, { h: "3. 보안", p: "데이터는 로컬에 암호화되어 저장됩니다." }, { h: "4. 변경", p: "정책은 예고 없이 변경될 수 있습니다." }] },
+            pt: { title: "Política de Privacidade (Privacy Policy)", update: "Atualizado: 13 fev 2026", intro: "A versão em inglês prevalece.", sections: [{ h: "1. Sem Coleta", p: "Não coletamos dados pessoais." }, { h: "2. Terceiros", p: "Uso de AdMob e Firebase." }, { h: "3. Segurança", p: "Criptografia local." }, { h: "4. Alterações", p: "Alterações sem aviso prévio." }] },
+            th: { title: "นโยบายความเป็นส่วนตัว (Privacy Policy)", update: "อัปเดต: 13 ก.พ. 2026", intro: "เวอร์ชันภาษาอังกฤษเป็นหลัก", sections: [{ h: "1. ไม่มีการเก็บข้อมูล", p: "เราไม่เก็บข้อมูลส่วนตัวหรือรหัสผ่าน" }, { h: "2. บุคคลที่สาม", p: "ใช้ AdMob และ Firebase" }, { h: "3. ความปลอดภัย", p: "เข้ารหัสในเครื่อง" }, { h: "4. การเปลี่ยนแปลง", p: "อาจเปลี่ยนแปลงโดยไม่แจ้ง" }] },
+            vi: { title: "Chính sách Quyền riêng tư (Privacy Policy)", update: "Cập nhật: 13/02/2026", intro: "Bản tiếng Anh được ưu tiên.", sections: [{ h: "1. Không thu thập", p: "Chúng tôi không thu thập dữ liệu cá nhân." }, { h: "2. Bên thứ ba", p: "Sử dụng AdMob và Firebase." }, { h: "3. Bảo mật", p: "Mã hóa cục bộ." }, { h: "4. Thay đổi", p: "Có thể thay đổi không báo trước." }] },
+            zh: { title: "隐私政策 (Privacy Policy)", update: "更新日期：2026年2月13日", intro: "<strong>语言规定：</strong> 以英文版本为准。", sections: [{ h: "1. 不收集的信息", p: "我们<strong>不收集</strong>您的姓名、邮箱或主密码。" }, { h: "2. 第三方服务", p: "使用 Google AdMob 和 Firebase，可能会收集设备ID以用于广告和分析。" }, { h: "3. 数据安全", p: "所有数据均在本地加密存储。" }, { h: "4. 政策变更", p: "如有变更，恕不另行通知。" }] }
         };
-        // switchLang等のロジックはterms.htmlと同様
+
+        function switchLang(lang) {
+            const t = translations[lang] || translations.en;
+            const tEn = translations.en;
+            
+            let html = `<div class="date-info">${t.update || tEn.update}</div>`;
+            html += `<h1>${t.title || tEn.title}</h1>`;
+            html += `<p>${t.intro || tEn.intro}</p>`;
+            
+            const sections = t.sections || tEn.sections;
+            sections.forEach(s => {
+                html += `<h2>${s.h}</h2><p>${s.p}</p>`;
+            });
+            
+            document.getElementById('content').innerHTML = html;
+            document.getElementById('contact-title').innerText = t.contactT || tEn.contactT;
+            document.getElementById('contact-desc').innerText = t.contactD || tEn.contactD;
+            location.hash = lang;
+        }
+
+        window.onload = () => {
+            const savedLang = location.hash.replace('#', '');
+            const browserLang = navigator.language.split('-')[0];
+            const targetLang = translations[savedLang] ? savedLang : (translations[browserLang] ? browserLang : 'en');
+            
+            document.getElementById('langSelect').value = targetLang;
+            switchLang(targetLang);
+        };
     </script>
 </body>
 </html>
