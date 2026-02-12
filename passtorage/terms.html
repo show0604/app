@@ -9,10 +9,12 @@
         h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
         h2 { margin-top: 30px; color: #444; border-left: 4px solid #444; padding-left: 10px; }
         .lang-switcher { text-align: right; margin-bottom: 20px; }
-        .master-notice { background: #fff3cd; padding: 10px; border-radius: 5px; font-size: 0.9em; margin-bottom: 20px; border: 1px solid #ffeeba; }
+        .master-notice { background: #fff3cd; padding: 15px; border-radius: 5px; font-size: 0.9em; margin-bottom: 20px; border: 1px solid #ffeeba; }
         .contact-box { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-top: 20px; border: 1px solid #eee; }
-        .date-info { text-align: right; font-size: 0.8em; color: #777; margin-bottom: 20px; }
+        .date-info { text-align: right; font-size: 0.8em; color: #777; margin-bottom: 10px; }
         a { color: #007bff; text-decoration: none; }
+        ul { padding-left: 20px; }
+        select { padding: 5px; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -31,65 +33,111 @@
             <option value="pt">Português</option>
             <option value="th">ไทย</option>
             <option value="vi">Tiếng Việt</option>
-            <option value="zh">中文</option>
+            <option value="zh">中文 (简体)</option>
         </select>
     </div>
 
     <div id="content"></div>
 
     <div class="contact-box">
-        <h2 id="contact-title">Contact</h2>
+        <h2 id="contact-title">Contact Us</h2>
         <p id="contact-desc">If you have any questions, please contact us:</p>
         <ul>
             <li>Email: <a href="mailto:myapp.show0604@gmail.com">myapp.show0604@gmail.com</a></li>
-            <li>X: <a href="https://x.com/myapp_show0604" target="_blank">@myapp_show0604</a></li>
+            <li>X (Twitter): <a href="https://x.com/myapp_show0604" target="_blank">@myapp_show0604</a></li>
         </ul>
     </div>
+
+    <hr>
+    <p><a href="index.html">Back to Home</a></p>
 
     <script>
         const translations = {
             en: {
                 title: "Terms of Service",
                 update: "Last Updated: February 13, 2026",
-                masterNotice: "Notice: The English version is the master. Translations are for reference.",
+                masterNotice: "<strong>Governing Language:</strong> This Agreement is executed in English. Translations into other languages are provided for convenience only. In the event of any conflict or discrepancy between the English version and any translated version, the <strong>English version shall prevail</strong>.",
                 sections: [
-                    { h: "1. Acceptance", p: "By using Passtorage, you agree to these terms. If you disagree, stop using the app." },
-                    { h: "2. Zero-Knowledge", p: "We cannot recover your Master Password. You are solely responsible for your data and backups." },
-                    { h: "3. Changes to Terms", p: "We may update these terms at any time without prior notice. Changes are effective immediately upon posting to this page. Continued use of the app constitutes acceptance of the new terms." },
-                    { h: "4. Jurisdiction", p: "Governed by Japanese law. Any disputes shall be subject to the exclusive jurisdiction of the Fukuoka District Court." }
+                    { h: "1. Acceptance of Terms", p: "By downloading, accessing, or using Passtorage (the \"App\"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App." },
+                    { h: "2. Zero-Knowledge Policy & User Responsibility", p: "The App operates on a \"Zero-Knowledge\" basis. All data is stored locally on your device and is encrypted. <strong>We do not have access to your Master Password or your stored data.</strong><br><br>You acknowledge and agree that:<br>1. You are solely responsible for remembering your Master Password.<br>2. <strong>If you lose or forget your Master Password, your data CANNOT be recovered by us.</strong><br>3. You are responsible for managing your own backups. We are not responsible for any data loss due to device failure, theft, or user error." },
+                    { h: "3. Use License & Restrictions", p: "Permission is granted to temporarily download one copy of the App for personal, non-commercial transitory viewing only. Under this license, you may not:<br>1. Modify or copy the materials;<br>2. Attempt to decompile or reverse engineer any software contained in the App;<br>3. Use the materials for any commercial purpose.<br><br>This license shall automatically terminate if you violate any of these restrictions." },
+                    { h: "4. Disclaimer", p: "The materials on the App are provided \"as is\". We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property." },
+                    { h: "5. Limitation of Liability", p: "In no event shall the developer or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the App, even if we have been notified of the possibility of such damage." },
+                    { h: "6. Modifications to Terms", p: "We reserve the right to modify these terms at any time without prior notice. The updated terms will be effective immediately upon posting on this page. Your continued use of the App after any changes signifies your acceptance of the new terms." },
+                    { h: "7. Governing Law & Jurisdiction", p: "These terms and conditions are governed by and construed in accordance with the <strong>laws of Japan</strong>. You irrevocably submit to the exclusive jurisdiction of the <strong>Fukuoka District Court</strong> (Fukuoka, Japan) for any disputes or claims arising out of or in connection with these terms." }
                 ],
-                contactT: "Contact Us", contactD: "Reach out via:"
+                contactT: "Contact Us", contactD: "If you have any questions about these Terms, please contact us:"
             },
             ja: {
                 title: "利用規約",
                 update: "最終更新日: 2026年2月13日",
-                masterNotice: "注意：本規約は英語版を正本とします。翻訳は参照用です。",
+                masterNotice: "<strong>言語に関する規定：</strong> 本規約は英語で作成され、正本とします。他言語への翻訳は便宜上の目的でのみ提供されます。英語版と翻訳版の間に矛盾や相違がある場合、<strong>英語版が優先</strong>されます。",
                 sections: [
-                    { h: "1. 同意", p: "Passtorageを利用することで、本規約に同意したものとみなされます。" },
-                    { h: "2. 自己責任", p: "開発者はユーザーのパスワードを知り得ません。紛失時の復元は不可能です。管理は自己責任で行ってください。" },
-                    { h: "3. 規約の変更", p: "本規約は予告なく変更されることがあります。変更後の規約は本ページに掲載された時点から効力を生じ、継続利用をもって同意とみなされます。" },
-                    { h: "4. 管轄裁判所", p: "日本法を準拠法とし、一切の紛争は福岡地方裁判所を第一審の専属的合意管轄裁判所とします。" }
+                    { h: "1. 規約への同意", p: "Passtorage（以下「本アプリ」）をダウンロード、アクセス、または使用することにより、利用者は本利用規約に拘束されることに同意したものとみなされます。同意しない場合は、本アプリを使用しないでください。" },
+                    { h: "2. ゼロ知識ポリシーとユーザーの責任", p: "本アプリは「ゼロ知識（Zero-Knowledge）」ベースで動作します。すべてのデータは利用者のデバイス内にローカルに保存され、暗号化されます。<strong>開発者は利用者のマスターパスワードや保存データに一切アクセスできません。</strong><br><br>利用者は以下を了承し、同意するものとします：<br>1. マスターパスワードの管理は利用者の完全な自己責任であること。<br>2. <strong>マスターパスワードを紛失・忘却した場合、開発者によるデータの復元は不可能であること。</strong><br>3. バックアップの管理は利用者の責任で行うこと。端末の故障、紛失、または利用者の誤操作によるデータ消失について、開発者は一切の責任を負いません。" },
+                    { h: "3. 使用許諾および禁止事項", p: "本アプリの個人的かつ非商用的な使用に限り、一時的なダウンロードが許可されます。以下の行為は禁止されます：<br>1. 本アプリの改変または複製。<br>2. 本アプリに含まれるソフトウェアのリバースエンジニアリングや逆コンパイルの試み。<br>3. 営利目的での使用。<br><br>これらの制限に違反した場合、使用許諾は自動的に終了します。" },
+                    { h: "4. 免責事項", p: "本アプリは「現状有姿（as-is）」で提供されます。開発者は、明示または黙示を問わず、商品性、特定目的への適合性、権利非侵害の黙示の保証を含むがこれらに限定されない、いかなる保証も行いません。" },
+                    { h: "5. 責任の制限", p: "開発者はいかなる場合も、本アプリの使用または使用不能から生じる損害（データの損失、利益の損失、事業の中断による損害を含むがこれらに限定されない）について、たとえそのような損害の可能性について知らされていたとしても、一切の責任を負いません。" },
+                    { h: "6. 規約の変更", p: "開発者は、事前の通知なくいつでも本規約を変更する権利を留保します。変更後の規約は、本ページに掲載された時点で直ちに効力を生じます。変更後も本アプリの利用を継続した場合、新しい規約に同意したものとみなされます。" },
+                    { h: "7. 準拠法および裁判管轄", p: "本規約は<strong>日本法</strong>に準拠し、同法に従って解釈されます。本規約に起因または関連する一切の紛争については、<strong>福岡地方裁判所</strong>を第一審の専属的合意管轄裁判所とします。" }
                 ],
-                contactT: "お問い合わせ", contactD: "ご連絡はこちらまで："
-            }
-            // 他の言語(bn, de, es等)も同様の構造で追加可能です
+                contactT: "お問い合わせ", contactD: "本規約に関するご質問は、以下よりご連絡ください："
+            },
+            // Simplified translations for other languages (Structure is maintained)
+            bn: { title: "পরিষেবার শর্তাবলী (Terms of Service)", update: "Last Updated: Feb 13, 2026", masterNotice: "ইংরেজি সংস্করণটি মূল সংস্করণ এবং অন্য যেকোনো অনুবাদের চেয়ে প্রাধান্য পাবে। (English version prevails)", sections: [
+                { h: "1. Acceptance", p: "By using this app, you agree to these terms." }, { h: "2. Zero-Knowledge", p: "We cannot recover your password. You are responsible for your data." }, { h: "3. Restrictions", p: "Reverse engineering is prohibited." }, { h: "4. Disclaimer", p: "App is provided 'as is'. No warranties." }, { h: "5. Liability", p: "We are not liable for data loss." }, { h: "6. Changes", p: "Terms may change without notice." }, { h: "7. Jurisdiction", p: "Governed by Japanese Law. Fukuoka District Court." }] },
+            de: { title: "Nutzungsbedingungen (Terms of Service)", update: "Zuletzt aktualisiert: 13. Feb. 2026", masterNotice: "Die englische Version ist maßgebend und hat Vorrang vor Übersetzungen.", sections: [
+                { h: "1. Akzeptanz", p: "Durch die Nutzung der App stimmen Sie diesen Bedingungen zu." }, { h: "2. Zero-Knowledge", p: "Wir können Ihr Passwort nicht wiederherstellen. Sie sind für Ihre Daten verantwortlich." }, { h: "3. Einschränkungen", p: "Reverse Engineering ist verboten." }, { h: "4. Haftungsausschluss", p: "Die App wird 'wie besehen' bereitgestellt. Keine Garantien." }, { h: "5. Haftungsbeschränkung", p: "Wir haften nicht für Datenverlust." }, { h: "6. Änderungen", p: "Bedingungen können ohne Vorankündigung geändert werden." }, { h: "7. Gerichtsstand", p: "Es gilt japanisches Recht. Gerichtsstand ist Fukuoka." }] },
+            es: { title: "Términos de Servicio (Terms of Service)", update: "Actualizado: 13 de feb. de 2026", masterNotice: "La versión en inglés prevalecerá sobre cualquier traducción.", sections: [
+                { h: "1. Aceptación", p: "Al usar la aplicación, aceptas estos términos." }, { h: "2. Conocimiento Cero", p: "No podemos recuperar tu contraseña. Eres responsable de tus datos." }, { h: "3. Restricciones", p: "Se prohíbe la ingeniería inversa." }, { h: "4. Renuncia", p: "La aplicación se proporciona 'tal cual'. Sin garantías." }, { h: "5. Limitación", p: "No somos responsables de la pérdida de datos." }, { h: "6. Cambios", p: "Los términos pueden cambiar sin previo aviso." }, { h: "7. Jurisdicción", p: "Leyes de Japón. Tribunal de Distrito de Fukuoka." }] },
+            fr: { title: "Conditions d'Utilisation (Terms of Service)", update: "Mis à jour : 13 fév. 2026", masterNotice: "La version anglaise prévaut sur toute traduction.", sections: [
+                { h: "1. Acceptation", p: "En utilisant l'application, vous acceptez ces conditions." }, { h: "2. Zéro Connaissance", p: "Nous ne pouvons pas récupérer votre mot de passe. Vous êtes responsable de vos données." }, { h: "3. Restrictions", p: "L'ingénierie inverse est interdite." }, { h: "4. Avis de non-responsabilité", p: "L'application est fournie 'telle quelle'." }, { h: "5. Limitation", p: "Nous ne sommes pas responsables de la perte de données." }, { h: "6. Modifications", p: "Les conditions peuvent changer sans préavis." }, { h: "7. Juridiction", p: "Lois du Japon. Tribunal de district de Fukuoka." }] },
+            hi: { title: "सेवा की शर्तें (Terms of Service)", update: "Last Updated: Feb 13, 2026", masterNotice: "अंग्रेजी संस्करण ही मान्य होगा। (English version prevails)", sections: [
+                { h: "1. Acceptance", p: "By using this app, you agree to these terms." }, { h: "2. Zero-Knowledge", p: "We cannot recover your password." }, { h: "3. Restrictions", p: "Reverse engineering prohibited." }, { h: "4. Disclaimer", p: "Provided 'as is'." }, { h: "5. Liability", p: "Not liable for damages." }, { h: "6. Changes", p: "Changes effective immediately." }, { h: "7. Jurisdiction", p: "Japanese Law. Fukuoka District Court." }] },
+            id: { title: "Ketentuan Layanan (Terms of Service)", update: "Diperbarui: 13 Feb 2026", masterNotice: "Versi bahasa Inggris akan berlaku jika ada perbedaan.", sections: [
+                { h: "1. Penerimaan", p: "Dengan menggunakan aplikasi, Anda menyetujui ketentuan ini." }, { h: "2. Zero-Knowledge", p: "Kami tidak dapat memulihkan kata sandi Anda." }, { h: "3. Pembatasan", p: "Dilarang melakukan rekayasa balik." }, { h: "4. Penafian", p: "Aplikasi disediakan 'sebagaimana adanya'." }, { h: "5. Batasan", p: "Kami tidak bertanggung jawab atas kehilangan data." }, { h: "6. Perubahan", p: "Ketentuan dapat berubah tanpa pemberitahuan." }, { h: "7. Yurisdiksi", p: "Hukum Jepang. Pengadilan Distrik Fukuoka." }] },
+            it: { title: "Termini di Servizio (Terms of Service)", update: "Aggiornato: 13 feb 2026", masterNotice: "La versione inglese prevale su qualsiasi traduzione.", sections: [
+                { h: "1. Accettazione", p: "Utilizzando l'app, accetti questi termini." }, { h: "2. Zero-Knowledge", p: "Non possiamo recuperare la tua password." }, { h: "3. Restrizioni", p: "Vietata l'ingegneria inversa." }, { h: "4. Disclaimer", p: "App fornita 'così com'è'." }, { h: "5. Limitazione", p: "Non responsabili per perdita dati." }, { h: "6. Modifiche", p: "Modifiche senza preavviso." }, { h: "7. Giurisdizione", p: "Legge giapponese. Tribunale di Fukuoka." }] },
+            ko: { title: "이용 약관 (Terms of Service)", update: "최종 업데이트: 2026년 2월 13일", masterNotice: "<strong>언어 규정:</strong> 영문판이 정본이며, 번역본과 상충하는 경우 <strong>영문판이 우선</strong>합니다.", sections: [
+                { h: "1. 약관 동의", p: "앱을 사용함으로써 귀하는 본 약관에 동의하는 것으로 간주됩니다." }, { h: "2. 제로 날리지 및 책임", p: "당사는 귀하의 마스터 비밀번호를 복구할 수 없습니다. 데이터 관리 책임은 전적으로 귀하에게 있습니다." }, { h: "3. 금지 사항", p: "리버스 엔지니어링 및 상업적 이용은 금지됩니다." }, { h: "4. 면책 조항", p: "앱은 '있는 그대로' 제공되며 어떠한 보증도 하지 않습니다." }, { h: "5. 책임의 제한", p: "당사는 데이터 손실에 대해 책임을 지지 않습니다." }, { h: "6. 약관 변경", p: "약관은 예고 없이 변경될 수 있으며 즉시 효력이 발생합니다." }, { h: "7. 관할 법원", p: "<strong>일본법</strong>을 준거법으로 하며, <strong>후쿠오카 지방 재판소</strong>를 전속 관할로 합니다." }] },
+            pt: { title: "Termos de Serviço (Terms of Service)", update: "Atualizado: 13 fev 2026", masterNotice: "A versão em inglês prevalecerá em caso de conflito.", sections: [
+                { h: "1. Aceitação", p: "Ao usar o aplicativo, você concorda com estes termos." }, { h: "2. Zero-Knowledge", p: "Não podemos recuperar sua senha." }, { h: "3. Restrições", p: "Engenharia reversa é proibida." }, { h: "4. Isenção", p: "Fornecido 'no estado em que se encontra'." }, { h: "5. Limitação", p: "Não nos responsabilizamos por perda de dados." }, { h: "6. Alterações", p: "Alterações sem aviso prévio." }, { h: "7. Jurisdição", p: "Lei japonesa. Tribunal de Fukuoka." }] },
+            th: { title: "ข้อกำหนดการให้บริการ (Terms of Service)", update: "อัปเดต: 13 ก.พ. 2026", masterNotice: "เวอร์ชันภาษาอังกฤษถือเป็นฉบับหลักและมีผลบังคับใช้เหนือฉบับแปล", sections: [
+                { h: "1. การยอมรับ", p: "การใช้แอปถือว่าคุณยอมรับข้อกำหนดเหล่านี้" }, { h: "2. ความรู้เป็นศูนย์ (Zero-Knowledge)", p: "เราไม่สามารถกู้คืนรหัสผ่านของคุณได้ คุณต้องรับผิดชอบข้อมูลของคุณเอง" }, { h: "3. ข้อจำกัด", p: "ห้ามทำวิศวกรรมย้อนกลับ" }, { h: "4. การปฏิเสธความรับผิด", p: "แอปให้บริการ 'ตามสภาพ' โดยไม่มีการรับประกัน" }, { h: "5. ข้อจำกัดความรับผิด", p: "เราไม่รับผิดชอบต่อการสูญหายของข้อมูล" }, { h: "6. การเปลี่ยนแปลง", p: "ข้อกำหนดอาจเปลี่ยนแปลงโดยไม่ต้องแจ้งให้ทราบ" }, { h: "7. เขตอำนาจศาล", p: "กฎหมายญี่ปุ่น ศาลแขวงฟุกุโอกะ" }] },
+            vi: { title: "Điều khoản Dịch vụ (Terms of Service)", update: "Cập nhật: 13/02/2026", masterNotice: "Phiên bản tiếng Anh sẽ được ưu tiên áp dụng.", sections: [
+                { h: "1. Chấp nhận", p: "Bằng cách sử dụng ứng dụng, bạn đồng ý với các điều khoản này." }, { h: "2. Zero-Knowledge", p: "Chúng tôi không thể khôi phục mật khẩu của bạn." }, { h: "3. Hạn chế", p: "Nghiêm cấm đảo ngược mã nguồn (Reverse engineering)." }, { h: "4. Từ chối trách nhiệm", p: "Ứng dụng được cung cấp 'nguyên trạng'." }, { h: "5. Giới hạn", p: "Chúng tôi không chịu trách nhiệm về mất mát dữ liệu." }, { h: "6. Thay đổi", p: "Điều khoản có thể thay đổi mà không báo trước." }, { h: "7. Thẩm quyền", p: "Luật pháp Nhật Bản. Tòa án Quận Fukuoka." }] },
+            zh: { title: "服务条款 (Terms of Service)", update: "更新日期：2026年2月13日", masterNotice: "<strong>语言规定：</strong> 英文版本为正本。如中译本与英文本有任何冲突，以<strong>英文版本为准</strong>。", sections: [
+                { h: "1. 接受条款", p: "使用 Passtorage 即表示您同意受本服务条款的约束。如果您不同意，请勿使用本应用。" }, { h: "2. 零知识政策与用户责任", p: "本应用基于“零知识”原则运行。所有数据均加密并存储在您的设备本地。<strong>我们无法访问您的主密码或数据。</strong><br>若您丢失主密码，数据将<strong>无法恢复</strong>。备份管理由您自行负责。" }, { h: "3. 使用许可与限制", p: "禁止反向工程、反编译或将本应用用于商业目的。" }, { h: "4. 免责声明", p: "本应用按“原样”提供。不提供任何明示或暗示的保证。" }, { h: "5. 责任限制", p: "对于因使用本应用而导致的数据丢失或任何损害，开发者概不负责。" }, { h: "6. 条款修改", p: "我们保留随时修改条款且不预先通知的权利。修改后的条款一经发布即刻生效。" }, { h: "7. 管辖法律与裁判所", p: "本条款受<strong>日本法律</strong>管辖。如有争议，以<strong>福冈地方裁判所</strong>为第一审专属管辖法院。" }] }
         };
 
         function switchLang(lang) {
             const t = translations[lang] || translations.en;
-            let html = `<div class="date-info">${t.update}</div><h1>${t.title}</h1><div class="master-notice">${t.masterNotice}</div>`;
-            t.sections.forEach(s => { html += `<h2>${s.h}</h2><p>${s.p}</p>`; });
+            // Fallback to English content if specific key is missing (for safety)
+            const tEn = translations.en;
+            
+            let html = `<div class="date-info">${t.update || tEn.update}</div>`;
+            html += `<h1>${t.title || tEn.title}</h1>`;
+            html += `<div class="master-notice">${t.masterNotice || tEn.masterNotice}</div>`;
+            
+            const sections = t.sections || tEn.sections;
+            sections.forEach(s => {
+                html += `<h2>${s.h}</h2><p>${s.p}</p>`;
+            });
+            
             document.getElementById('content').innerHTML = html;
-            document.getElementById('contact-title').innerText = t.contactT;
-            document.getElementById('contact-desc').innerText = t.contactD;
+            document.getElementById('contact-title').innerText = t.contactT || tEn.contactT;
+            document.getElementById('contact-desc').innerText = t.contactD || tEn.contactD;
             location.hash = lang;
         }
 
         window.onload = () => {
-            const lang = location.hash.replace('#', '') || navigator.language.split('-')[0];
-            const select = document.getElementById('langSelect');
-            select.value = translations[lang] ? lang : 'en';
-            switchLang(select.value);
+            const savedLang = location.hash.replace('#', '');
+            const browserLang = navigator.language.split('-')[0];
+            // Check if we have translation, otherwise default to English
+            const targetLang = translations[savedLang] ? savedLang : (translations[browserLang] ? browserLang : 'en');
+            
+            document.getElementById('langSelect').value = targetLang;
+            switchLang(targetLang);
         };
     </script>
 </body>
