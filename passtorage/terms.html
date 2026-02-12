@@ -8,37 +8,89 @@
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
         h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
         h2 { margin-top: 30px; color: #444; border-left: 4px solid #444; padding-left: 10px; }
-        a { color: #007bff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        .lang-switcher { text-align: right; margin-bottom: 20px; }
+        .master-notice { background: #fff3cd; padding: 10px; border-radius: 5px; font-size: 0.9em; margin-bottom: 20px; border: 1px solid #ffeeba; }
         .contact-box { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-top: 20px; border: 1px solid #eee; }
+        .date-info { text-align: right; font-size: 0.8em; color: #777; margin-bottom: 20px; }
+        a { color: #007bff; text-decoration: none; }
     </style>
 </head>
 <body>
-    <h1>Terms of Service</h1>
-    <p><strong>App Name:</strong> Passtorage</p>
+    <div class="lang-switcher">
+        <select id="langSelect" onchange="switchLang(this.value)">
+            <option value="en">English (Master)</option>
+            <option value="ja">日本語</option>
+            <option value="bn">বাংলা</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="hi">हिन्दी</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="it">Italiano</option>
+            <option value="ko">한국어</option>
+            <option value="pt">Português</option>
+            <option value="th">ไทย</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="zh">中文</option>
+        </select>
+    </div>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By accessing and using this application, you accept and agree to be bound by the terms and provision of this agreement.</p>
-
-    <h2>2. Use License</h2>
-    <p>Permission is granted to temporarily download one copy of the materials (information or software) on this application for personal, non-commercial transitory viewing only.</p>
-
-    <h2>3. Disclaimer</h2>
-    <p>The materials on this application are provided "as is". The application makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
-
-    <h2>4. Limitations</h2>
-    <p>In no event shall the application or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on the application.</p>
+    <div id="content"></div>
 
     <div class="contact-box">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or suggestions about these Terms of Service, please contact us:</p>
+        <h2 id="contact-title">Contact</h2>
+        <p id="contact-desc">If you have any questions, please contact us:</p>
         <ul>
             <li>Email: <a href="mailto:myapp.show0604@gmail.com">myapp.show0604@gmail.com</a></li>
-            <li>X (Twitter): <a href="https://x.com/myapp_show0604" target="_blank">@myapp_show0604</a></li>
+            <li>X: <a href="https://x.com/myapp_show0604" target="_blank">@myapp_show0604</a></li>
         </ul>
     </div>
 
-    <hr>
-    <p><a href="index.html">Back to Home</a></p>
+    <script>
+        const translations = {
+            en: {
+                title: "Terms of Service",
+                update: "Last Updated: February 13, 2026",
+                masterNotice: "Notice: The English version is the master. Translations are for reference.",
+                sections: [
+                    { h: "1. Acceptance", p: "By using Passtorage, you agree to these terms. If you disagree, stop using the app." },
+                    { h: "2. Zero-Knowledge", p: "We cannot recover your Master Password. You are solely responsible for your data and backups." },
+                    { h: "3. Changes to Terms", p: "We may update these terms at any time without prior notice. Changes are effective immediately upon posting to this page. Continued use of the app constitutes acceptance of the new terms." },
+                    { h: "4. Jurisdiction", p: "Governed by Japanese law. Any disputes shall be subject to the exclusive jurisdiction of the Fukuoka District Court." }
+                ],
+                contactT: "Contact Us", contactD: "Reach out via:"
+            },
+            ja: {
+                title: "利用規約",
+                update: "最終更新日: 2026年2月13日",
+                masterNotice: "注意：本規約は英語版を正本とします。翻訳は参照用です。",
+                sections: [
+                    { h: "1. 同意", p: "Passtorageを利用することで、本規約に同意したものとみなされます。" },
+                    { h: "2. 自己責任", p: "開発者はユーザーのパスワードを知り得ません。紛失時の復元は不可能です。管理は自己責任で行ってください。" },
+                    { h: "3. 規約の変更", p: "本規約は予告なく変更されることがあります。変更後の規約は本ページに掲載された時点から効力を生じ、継続利用をもって同意とみなされます。" },
+                    { h: "4. 管轄裁判所", p: "日本法を準拠法とし、一切の紛争は福岡地方裁判所を第一審の専属的合意管轄裁判所とします。" }
+                ],
+                contactT: "お問い合わせ", contactD: "ご連絡はこちらまで："
+            }
+            // 他の言語(bn, de, es等)も同様の構造で追加可能です
+        };
+
+        function switchLang(lang) {
+            const t = translations[lang] || translations.en;
+            let html = `<div class="date-info">${t.update}</div><h1>${t.title}</h1><div class="master-notice">${t.masterNotice}</div>`;
+            t.sections.forEach(s => { html += `<h2>${s.h}</h2><p>${s.p}</p>`; });
+            document.getElementById('content').innerHTML = html;
+            document.getElementById('contact-title').innerText = t.contactT;
+            document.getElementById('contact-desc').innerText = t.contactD;
+            location.hash = lang;
+        }
+
+        window.onload = () => {
+            const lang = location.hash.replace('#', '') || navigator.language.split('-')[0];
+            const select = document.getElementById('langSelect');
+            select.value = translations[lang] ? lang : 'en';
+            switchLang(select.value);
+        };
+    </script>
 </body>
 </html>
