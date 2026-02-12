@@ -52,6 +52,8 @@
     <p><a href="index.html">Back to Home</a></p>
 
     <script>
+        const LAST_UPDATED = '2026-02-13';
+        
         const translations = {
             en: {
                 title: "Terms of Service",
@@ -114,8 +116,10 @@
             const t = translations[lang] || translations.en;
             // Fallback to English content if specific key is missing (for safety)
             const tEn = translations.en;
+
+            const formattedDate = new Date(LAST_UPDATED).toLocaleDateString(lang, { year: 'numeric', month: 'long', day: 'numeric' });
             
-            let html = `<div class="date-info">${t.update || tEn.update}</div>`;
+            let html = `<div class="date-info">${t.dateLabel || tEn.dateLabel}${formattedDate}</div>`;
             html += `<h1>${t.title || tEn.title}</h1>`;
             html += `<div class="master-notice">${t.masterNotice || tEn.masterNotice}</div>`;
             
